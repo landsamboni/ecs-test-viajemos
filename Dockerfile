@@ -1,9 +1,9 @@
 # Usar Amazon Linux 2 como imagen base
 FROM amazonlinux:2
 
-# Instalar Nginx
+# Instalar Nginx desde un repositorio de terceros
 RUN yum -y update && \
-    yum -y install nginx && \
+    amazon-linux-extras install nginx1 -y && \
     yum clean all
 
 # Copiar el contenido de la página web al directorio de Nginx

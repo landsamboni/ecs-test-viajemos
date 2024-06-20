@@ -1,9 +1,17 @@
-# Usamos una imagen base oficial de Nginx
-FROM nginx:latest
+# Usar Amazon Linux 2 como imagen base
+FROM amazonlinux:2
 
-# Copiamos el contenido de la página web al directorio de Nginx
+# Instalar Nginx
+RUN yum -y update && \
+    yum -y install nginx && \
+    yum clean all
+
+# Copiar el contenido de la página web al directorio de Nginx
 COPY index.html /usr/share/nginx/html/
 COPY styles.css /usr/share/nginx/html/
 
-# Exponemos el puerto 80 para acceder a la página web
+# Exponer el puerto 80 para acceder a la página web
 EXPOSE 80
+
+# Comando para ejecutar Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]

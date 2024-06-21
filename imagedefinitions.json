@@ -1,7 +1,0 @@
-[
-    {
-      "name": "my-docker-app",
-      "imageUri": "905418305988.dkr.ecr.us-east-1.amazonaws.com/website-dua-as:latest"
-    }
-  ]
-  

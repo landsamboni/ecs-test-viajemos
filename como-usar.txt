@@ -1,0 +1,24 @@
+Debo estar ubicado en la consola dentro de la carpeta del proyecto.
+
+Construir la imagen Docker:
+    docker build -t img-website-dua .
+
+
+Ejecutar el contenedor:
+    docker run -d -p 8080:80 img-website-dua
+    el 8080 es el puerto local donde estoy mapeando la aplicacion (en este caso un website)
+
+
+Para ver la pagina web funcionando hay que ir en un navegador a:
+    http://localhost:8080/
+
+
+Si quiero detener y eliminar el contenedor:
+Primero ver el container_id:
+    docker ps
+
+Luego detén el contenedor:
+    docker stop <container_id>
+
+Finalmente, elimina el contenedor (si lo deseas):
+    docker rm <container_id>
